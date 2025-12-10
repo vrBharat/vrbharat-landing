@@ -50,6 +50,7 @@ export default function Home() {
             name="Jinete"
             description="A revolutionary student ride-sharing platform connecting campuses. Safe, affordable, and community-driven transportation."
             badge="Launching Soon"
+            imageUrl="/jinetelogo.jpg"
           />
           <AppCard
             name="Mystery App 1"
@@ -83,9 +84,9 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-6 mb-8">
             {/* Social Links Placeholders */}
-            <a href="#" className="hover:text-white">Twitter</a>
+            <a href="https://x.com/VRBHARAT180415?t=A6ieK78fWOIABiWNg2byYA&s=09" target="_blank" rel="noopener noreferrer" className="hover:text-white">Twitter/X</a>
             <a href="#" className="hover:text-white">LinkedIn</a>
-            <a href="#" className="hover:text-white">Instagram</a>
+            <a href="https://www.instagram.com/vr__bharat?igsh=MTg1NmFsa2loaGl4" target="_blank" rel="noopener noreferrer" className="hover:text-white">Instagram</a>
           </div>
           <p className="text-sm">
             © {new Date().getFullYear()} vrBharat Technologies. All rights reserved.

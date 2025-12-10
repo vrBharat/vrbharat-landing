@@ -8,7 +8,7 @@ interface AppCardProps {
     isComingSoon?: boolean;
 }
 
-export default function AppCard({ name, description, badge, isComingSoon }: AppCardProps) {
+export default function AppCard({ name, description, badge, isComingSoon, imageUrl }: AppCardProps) {
     if (isComingSoon) {
         return (
             <div className="relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col items-center justify-center min-h-[220px]">
@@ -34,8 +34,18 @@ export default function AppCard({ name, description, badge, isComingSoon }: AppC
         <div className="group relative overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900 p-6 transition-all duration-300 hover:border-zinc-500 hover:shadow-2xl hover:shadow-primary/20">
 
             <div className="mb-4 flex items-start justify-between">
-                <div className="h-12 w-12 rounded-lg bg-zinc-800 flex items-center justify-center text-2xl font-bold text-zinc-400 group-hover:text-white transition-colors">
-                    {name[0]}
+                <div className="h-12 w-12 rounded-lg bg-zinc-800 flex items-center justify-center overflow-hidden text-2xl font-bold text-zinc-400 group-hover:text-white transition-colors">
+                    {imageUrl ? (
+                        <Image
+                            src={imageUrl}
+                            alt={`${name} Logo`}
+                            width={48}
+                            height={48}
+                            className="h-full w-full object-cover"
+                        />
+                    ) : (
+                        name[0]
+                    )}
                 </div>
                 {badge && (
                     <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary border border-primary/20">
