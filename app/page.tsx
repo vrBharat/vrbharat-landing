@@ -1,65 +1,97 @@
-import Image from "next/image";
+import NavBar from './components/NavBar';
+import AppCard from './components/AppCard';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary">
+      <NavBar />
+
+      {/* Hero Section */}
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-20 text-center">
+        {/* Background Gradients */}
+        <div className="absolute top-1/4 left-1/4 -z-10 h-96 w-96 rounded-full bg-primary/20 blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 -z-10 h-96 w-96 rounded-full bg-secondary/20 blur-[100px]" />
+
+        <h1 className="mb-6 max-w-4xl text-5xl font-extrabold tracking-tight sm:text-7xl">
+          Building the Future of <br className="hidden sm:block" />
+          <span className="bg-gradient-to-r from-primary via-white to-secondary bg-clip-text text-transparent">
+            Digital Bharat
+          </span>
+        </h1>
+
+        <p className="mb-10 max-w-2xl text-lg text-zinc-400 sm:text-xl">
+          vrBharat creates innovative, localized mobile applications designed to empower and connect the next generation of India.
+        </p>
+
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <a
+            href="#apps"
+            className="rounded-full bg-white px-8 py-4 text-base font-bold text-black transition-transform hover:scale-105"
+          >
+            Explore Apps
+          </a>
+          <a
+            href="#contact"
+            className="rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+          >
+            Contact Us
+          </a>
+        </div>
+      </section>
+
+      {/* Apps Section */}
+      <section id="apps" className="container mx-auto px-6 py-24">
+        <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+          Our Ecosystem
+        </h2>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <AppCard
+            name="Jinete"
+            description="A revolutionary student ride-sharing platform connecting campuses. Safe, affordable, and community-driven transportation."
+            badge="Launching Soon"
+          />
+          <AppCard
+            name="Mystery App 1"
+            description="Coming soon..."
+            isComingSoon
+          />
+          <AppCard
+            name="Mystery App 2"
+            description="Coming soon..."
+            isComingSoon
+          />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="bg-zinc-900/50 py-24 border-y border-white/5">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="mb-8 text-3xl font-bold">About vrBharat</h2>
+          <p className="mx-auto max-w-3xl text-lg text-zinc-400">
+            We are a team of passionate developers and dreamers dedicated to solving real-world problems through technology.
+            Based in India, for the World. Our mission is to build digital infrastructure that bridges gaps and creates opportunities.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Contact / Footer */}
+      <footer id="contact" className="py-12 text-center text-zinc-500">
+        <div className="container mx-auto px-6">
+          <p className="mb-4">
+            Interested in collaborating? Email us at <a href="mailto:contact@vrbharat.tech" className="text-primary hover:underline">contact@vrbharat.tech</a>
+          </p>
+          <div className="flex justify-center gap-6 mb-8">
+            {/* Social Links Placeholders */}
+            <a href="#" className="hover:text-white">Twitter</a>
+            <a href="#" className="hover:text-white">LinkedIn</a>
+            <a href="#" className="hover:text-white">Instagram</a>
+          </div>
+          <p className="text-sm">
+            © {new Date().getFullYear()} vrBharat Technologies. All rights reserved.
+          </p>
         </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
