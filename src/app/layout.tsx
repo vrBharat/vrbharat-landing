@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "vrBharat | Building Digital Bharat",
   description: "Innovative mobile applications for the next generation of India. Home of Jinete, vrPay, and more.",
   metadataBase: new URL('https://vrbharat.tech'),
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
