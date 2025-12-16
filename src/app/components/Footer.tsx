@@ -94,7 +94,7 @@ export default function Footer() {
                                     <span className="sr-only">YouTube</span>
                                     <Youtube className="h-6 w-6" />
                                 </a>
-                                <a href="https://www.instagram.com/vr__bharat?igsh=MTg1NmFsa2loaGl4" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#E4405F] transition-colors hover:scale-110 duration-200">
+                                <a href="https://www.instagram.com/vr_bharat?igsh=ZjR2YmJvZXF2eDN0" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#E4405F] transition-colors hover:scale-110 duration-200">
                                     <span className="sr-only">Instagram</span>
                                     <Instagram className="h-6 w-6" />
                                 </a>

@@ -21,7 +21,6 @@ export default function AppSection() {
                     <AppCard
                         name="Jinete"
                         description="A revolutionary student ride-sharing platform connecting campuses. Safe, affordable, and community-driven transportation."
-                        badge="Live Now"
                         imageUrl="/jinetelogo.jpg"
                     />
                     <AppCard
