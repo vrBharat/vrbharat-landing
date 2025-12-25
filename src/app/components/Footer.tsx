@@ -90,7 +90,7 @@ export default function Footer() {
                                         <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                                     </svg>
                                 </a>
-                                <a href="#" className="text-zinc-400 hover:text-[#FF0000] transition-colors hover:scale-110 duration-200">
+                                <a href="https://youtube.com/@vr_bharat?si=gYGubhhdywidpN-S" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#FF0000] transition-colors hover:scale-110 duration-200">
                                     <span className="sr-only">YouTube</span>
                                     <Youtube className="h-6 w-6" />
                                 </a>
