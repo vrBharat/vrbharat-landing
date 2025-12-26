@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Youtube, Instagram, Mail, ArrowRight } from 'lucide-react';
+import { Youtube, Instagram, Mail, ArrowRight, Linkedin } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -97,6 +97,10 @@ export default function Footer() {
                                 <a href="https://www.instagram.com/vr_bharat?igsh=ZjR2YmJvZXF2eDN0" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#E4405F] transition-colors hover:scale-110 duration-200">
                                     <span className="sr-only">Instagram</span>
                                     <Instagram className="h-6 w-6" />
+                                </a>
+                                <a href="https://www.linkedin.com/company/vrbharat/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#0077b5] transition-colors hover:scale-110 duration-200">
+                                    <span className="sr-only">LinkedIn</span>
+                                    <Linkedin className="h-6 w-6" />
                                 </a>
                             </div>
                         </div>
