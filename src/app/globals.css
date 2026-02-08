@@ -3,12 +3,14 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --primary: #FF9933;
-  /* Saffron-ish orange */
+  --primary: #ff9933;
   --secondary: #138808;
-  /* India Green */
   --accent: #000088;
-  /* Navy Blue */
+
+  /* Enhanced gradient colors */
+  --gradient-start: #ff9933;
+  --gradient-mid: #ffffff;
+  --gradient-end: #138808;
 }
 
 @theme inline {
@@ -19,6 +21,24 @@
   --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffaa55, #1fa810);
 }
 
 body {
@@ -38,15 +58,183 @@ h6 {
   font-weight: 700;
 }
 
-@keyframes float {
+/* ========== SHIMMER TEXT ANIMATION ========== */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
 
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start) 0%,
+    var(--gradient-mid) 25%,
+    var(--gradient-end) 50%,
+    var(--gradient-mid) 75%,
+    var(--gradient-start) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ========== GLOW BUTTON ANIMATION ========== */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(255, 153, 51, 0.3),
+      0 0 40px rgba(255, 153, 51, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(255, 153, 51, 0.5),
+      0 0 60px rgba(255, 153, 51, 0.2);
+  }
+}
+
+.glow-button {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--primary)
+  );
+  background-size: 200% 100%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: shimmer 3s linear infinite;
+}
+
+.glow-button:hover::before {
+  opacity: 1;
+}
+
+/* ========== GRADIENT BORDER ANIMATION ========== */
+@keyframes border-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-border {
+  position: relative;
+  background: rgba(24, 24, 27, 0.6);
+  border-radius: 1rem;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 153, 51, 0.3),
+    rgba(19, 136, 8, 0.3),
+    transparent
+  );
+  background-size: 300% 100%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+  animation: border-rotate 3s linear infinite;
+}
+
+/* ========== SHINE SWEEP ANIMATION ========== */
+@keyframes shine-sweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: none;
+}
+
+.shine-effect:hover::after {
+  animation: shine-sweep 0.75s ease-out;
+}
+
+/* ========== FLOATING ANIMATIONS ========== */
+@keyframes float {
   0%,
   100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
   }
 }
 
@@ -54,27 +242,44 @@ h6 {
   0% {
     transform: translate(0, 0);
   }
-
   50% {
     transform: translate(10px, 15px);
   }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 
+@keyframes drift-diagonal {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
   100% {
     transform: translate(0, 0);
   }
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     opacity: 0.5;
     transform: scale(1);
   }
-
   50% {
     opacity: 0.8;
     transform: scale(1.1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -82,28 +287,111 @@ h6 {
   animation: float 6s ease-in-out infinite;
 }
 
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
 .animate-drift {
   animation: drift 10s ease-in-out infinite;
+}
+
+.animate-drift-diagonal {
+  animation: drift-diagonal 8s ease-in-out infinite;
 }
 
 .animate-pulse-slow {
   animation: pulse-glow 4s ease-in-out infinite;
 }
 
-@keyframes drift-diagonal {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(20px, -20px);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
 
-.animate-drift-diagonal {
-  animation: drift-diagonal 8s ease-in-out infinite;
+/* ========== CARD HOVER EFFECTS ========== */
+.card-3d {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow:
+    0 25px 50px -12px rgba(255, 153, 51, 0.15),
+    0 0 0 1px rgba(255, 153, 51, 0.1);
+}
+
+/* ========== ICON GLOW ========== */
+.icon-glow {
+  transition: all 0.3s ease;
+}
+
+.icon-glow:hover {
+  filter: drop-shadow(0 0 8px currentColor);
+  transform: scale(1.1);
+}
+
+/* ========== TEXT GRADIENT ========== */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-india {
+  background: linear-gradient(90deg, var(--primary), #ffffff, var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ========== STAGGER ANIMATION DELAYS ========== */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* ========== GLASS MORPHISM ========== */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ========== NOISE TEXTURE OVERLAY ========== */
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* ========== SMOOTH SCROLL ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== SELECTION STYLING ========== */
+::selection {
+  background: rgba(255, 153, 51, 0.3);
+  color: #ffffff;
 }
