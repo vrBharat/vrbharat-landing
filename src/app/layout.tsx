@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "./components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "vrBharat | Building Digital Bharat",
-  description: "Innovative mobile applications for the next generation of India. Home of Jinete, vrPay, and more.",
-  metadataBase: new URL('https://vrbharat.tech'),
+  description:
+    "Innovative mobile applications for the next generation of India. Home of Jinete, vrPay, and more.",
+  metadataBase: new URL("https://vrbharat.tech"),
   icons: {
-    icon: '/logo.png',
+    icon: "/logo.png",
   },
 };
 
@@ -32,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <CustomCursor />
         {children}
         <Analytics />
       </body>
