@@ -164,7 +164,7 @@ export default function NavBar() {
               opacity: isOpen ? 1 : 0,
             }}
           >
-            <p>© 2024 vrBharat</p>
+            <p>© {new Date().getFullYear()} vrBharat</p>
             <p>Made in India, for the World</p>
           </div>
         </div>
