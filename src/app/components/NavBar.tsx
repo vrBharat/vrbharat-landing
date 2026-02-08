@@ -24,7 +24,13 @@ export default function NavBar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       <nav
-        className={`flex items-center justify-between px-6 md:px-8 py-4 transition-all duration-500 w-full ${scrolled || isOpen ? "bg-black/90 backdrop-blur-xl border-b border-white/10" : "bg-transparent"}`}
+        className={`flex items-center justify-between px-6 md:px-8 py-4 transition-all duration-500 w-full ${
+          isOpen
+            ? "bg-black"
+            : scrolled
+              ? "bg-black/90 backdrop-blur-xl border-b border-white/10"
+              : "bg-transparent"
+        }`}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-0 group relative z-50">
@@ -94,23 +100,43 @@ export default function NavBar() {
         </button>
 
         {/* Mobile Dropdown */}
+        {/* Mobile Menu Backdrop */}
         <div
-          className={`fixed inset-0 bg-black/95 backdrop-blur-2xl transition-all duration-500 ease-out md:hidden flex flex-col items-center justify-center ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+            isOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }`}
+          onClick={toggleMenu}
+        />
+
+        {/* Mobile Sidebar */}
+        <div
+          className={`fixed top-0 right-0 h-full w-[280px] bg-black border-l border-white/5 shadow-2xl transform transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1) md:hidden flex flex-col pt-24 px-6 ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          <div className="flex flex-col items-center gap-8">
+          {/* Decorative background blob */}
+          <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-primary/10 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[150px] h-[150px] bg-secondary/10 blur-[60px] rounded-full pointer-events-none" />
+
+          <div className="flex flex-col gap-6 relative z-10">
             {navLinks.map((item, index) => (
               <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={toggleMenu}
-                className="text-3xl font-bold text-zinc-400 hover:text-white transition-all duration-300 tracking-wide hover:tracking-widest"
+                className="group flex items-center justify-between text-xl font-medium text-zinc-400 hover:text-white transition-all duration-300 border-b border-white/5 pb-4"
                 style={{
-                  transitionDelay: isOpen ? `${index * 100}ms` : "0ms",
-                  transform: isOpen ? "translateY(0)" : "translateY(20px)",
+                  transitionDelay: isOpen ? `${index * 50 + 100}ms` : "0ms",
+                  transform: isOpen ? "translateX(0)" : "translateX(20px)",
                   opacity: isOpen ? 1 : 0,
                 }}
               >
-                {item}
+                <span>{item}</span>
+                <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary">
+                  →
+                </span>
               </Link>
             ))}
 
@@ -118,15 +144,28 @@ export default function NavBar() {
             <Link
               href="#contact"
               onClick={toggleMenu}
-              className="mt-4 px-8 py-3 text-lg font-bold text-black rounded-full bg-white hover:scale-105 transition-transform duration-300"
+              className="mt-4 w-full flex items-center justify-center px-6 py-3 text-base font-bold text-black rounded-full bg-white hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg relative overflow-hidden group"
               style={{
                 transitionDelay: isOpen ? "300ms" : "0ms",
                 transform: isOpen ? "translateY(0)" : "translateY(20px)",
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              Hire Us
+              <span className="relative z-10">Hire Us</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-zinc-200 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
+          </div>
+
+          {/* Footer Info in Menu */}
+          <div
+            className="mt-auto mb-8 text-xs text-zinc-600 text-center"
+            style={{
+              transitionDelay: isOpen ? "400ms" : "0ms",
+              opacity: isOpen ? 1 : 0,
+            }}
+          >
+            <p>© 2024 vrBharat</p>
+            <p>Made in India, for the World</p>
           </div>
         </div>
       </nav>
