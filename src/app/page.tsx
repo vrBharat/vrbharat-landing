@@ -1,9 +1,10 @@
-import NavBar from './components/NavBar';
-import HeroSection from './components/HeroSection';
-import AppSection from './components/AppSection';
-import BackgroundParticles from './components/BackgroundParticles';
-import Footer from './components/Footer';
-import AboutSection from './components/AboutSection';
+import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
+import AppSection from "./components/AppSection";
+import ServicesSection from "./components/ServicesSection";
+import BackgroundParticles from "./components/BackgroundParticles";
+import Footer from "./components/Footer";
+import AboutSection from "./components/AboutSection";
 
 export default function Home() {
   return (
@@ -15,7 +16,9 @@ export default function Home() {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Apps Section */}
+        {/* Services Section - New Hybrid Addition */}
+        <ServicesSection />
+
         {/* Apps Section */}
         <AppSection />
 
