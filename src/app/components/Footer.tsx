@@ -7,7 +7,7 @@ import { Youtube, Instagram, Mail, Linkedin } from "lucide-react";
 const socialLinks = [
   {
     name: "X",
-    href: "https://x.com/VRBHARAT180415?t=A6ieK78fWOIABiWNg2byYA&s=09",
+    href: "https://x.com/vrBharatb?s=20",
     icon: (
       <svg
         className="h-5 w-5"
