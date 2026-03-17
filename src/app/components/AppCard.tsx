@@ -112,7 +112,7 @@ export default function AppCard({
               rel="noopener noreferrer"
               className="flex items-center text-sm font-semibold text-primary transition-all duration-300 hover:scale-105"
             >
-              <span>App Store</span>
+              <span>Play Store</span>
               <svg
                 className="ml-2 h-4 w-4 fill-current"
                 viewBox="0 0 24 24"
