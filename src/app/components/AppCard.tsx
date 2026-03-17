@@ -9,6 +9,7 @@ interface AppCardProps {
   imageUrl?: string;
   isComingSoon?: boolean;
   link?: string;
+  websiteLink?: string;
 }
 
 export default function AppCard({
@@ -18,6 +19,7 @@ export default function AppCard({
   isComingSoon,
   imageUrl,
   link,
+  websiteLink,
 }: AppCardProps) {
   if (isComingSoon) {
     return (
@@ -102,48 +104,54 @@ export default function AppCard({
           {description}
         </p>
 
-        <div className="mt-6 flex items-center text-sm font-semibold text-primary opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
-          <span>{link ? "Get it on Play Store" : "Learn more"}</span>
-          {link ? (
-            <svg
-              className="ml-2 h-4 w-4 fill-current"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+        <div className="mt-auto pt-6 flex flex-wrap gap-4 items-center">
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-sm font-semibold text-primary transition-all duration-300 hover:scale-105"
             >
-              <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l-3.057 3.057 6.112-6.113zm-3.057-3.057l3.057 3.057 8.982-8.983a.997.997 0 0 0-.256-.057c-.126-.008-.254.01-.373.054zm3.957 7.014l-6.113-6.113 6.113-6.113.62.62 5.093 5.093a1 1 0 0 1 0 1.414l-5.093 5.093z" />
-            </svg>
-          ) : (
-            <svg
-              className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              <span>App Store</span>
+              <svg
+                className="ml-2 h-4 w-4 fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l-3.057 3.057 6.112-6.113zm-3.057-3.057l3.057 3.057 8.982-8.983a.997.997 0 0 0-.256-.057c-.126-.008-.254.01-.373.054zm3.957 7.014l-6.113-6.113 6.113-6.113.62.62 5.093 5.093a1 1 0 0 1 0 1.414l-5.093 5.093z" />
+              </svg>
+            </a>
+          )}
+          {websiteLink && (
+            <a
+              href={websiteLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-sm font-semibold text-zinc-300 transition-all duration-300 hover:text-white"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+              <span>Website</span>
+              <svg
+                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          )}
+          {!link && !websiteLink && !isComingSoon && (
+            <span className="text-sm font-semibold text-primary">Learn more</span>
           )}
         </div>
       </div>
     </div>
   );
-
-  if (link) {
-    return (
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block h-full"
-      >
-        {CardContent}
-      </a>
-    );
-  }
 
   return CardContent;
 }

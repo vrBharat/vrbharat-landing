@@ -29,15 +29,17 @@ export default function AppSection() {
             link="https://play.google.com/store/apps/details?id=com.vrbharat.jinete"
           />
           <AppCard
+            name="PDify"
+            description="AI-powered app that generates smart, customized summaries from any PDF. Also convert PDFs to images and images to PDFs with ease."
+            imageUrl="/pdify v2.png"
+            badge="Live Now"
+            link="https://play.google.com/store/apps/details?id=com.vrbharat.pdify"
+            websiteLink="https://www.pdify.co.in/"
+          />
+          <AppCard
             name="LearnTok"
             description="Reels that teach, not distract. Knowledge in every swipe."
             imageUrl="/LearnTok.png"
-            badge="Coming Soon"
-          />
-          <AppCard
-            name="PDify"
-            description="AI-powered app that generates smart, customized summaries from any PDF. Also convert PDFs to images and images to PDFs with ease."
-            imageUrl="/PDify.png"
             badge="Coming Soon"
           />
         </div>
