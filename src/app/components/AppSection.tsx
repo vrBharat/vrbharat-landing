@@ -38,9 +38,10 @@ export default function AppSection() {
           />
           <AppCard
             name="LearnTok"
-            description="Reels that teach, not distract. Knowledge in every swipe."
-            imageUrl="/LearnTok.png"
-            badge="Coming Soon"
+            description="Find someone who's already been where you're going. No gurus, no generic advice—just real experiences from real people."
+            imageUrl="/learntok-icon.svg"
+            badge="Live Now"
+            websiteLink="https://learntok.in"
           />
         </div>
 

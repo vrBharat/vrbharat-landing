@@ -71,13 +71,21 @@ export default function AppCard({
           <div className="h-16 w-16 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-500">
             {imageUrl ? (
               <div className="relative">
-                <Image
-                  src={imageUrl}
-                  alt={`${name} Logo`}
-                  width={64}
-                  height={64}
-                  className="h-full w-full object-cover rounded-2xl shadow-lg"
-                />
+                {imageUrl.endsWith('.svg') ? (
+                  <img
+                    src={imageUrl}
+                    alt={`${name} Logo`}
+                    className="h-16 w-16 object-contain rounded-2xl shadow-lg relative z-10"
+                  />
+                ) : (
+                  <Image
+                    src={imageUrl}
+                    alt={`${name} Logo`}
+                    width={64}
+                    height={64}
+                    className="h-full w-full object-cover rounded-2xl shadow-lg relative z-10"
+                  />
+                )}
                 {/* Glow behind logo */}
                 <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 scale-150" />
               </div>
