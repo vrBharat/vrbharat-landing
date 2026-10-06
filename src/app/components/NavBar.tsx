@@ -88,15 +88,15 @@ export default function NavBar() {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden relative z-50 p-2 text-zinc-400 hover:text-white focus:outline-none transition-colors"
+          className="md:hidden relative z-[100] p-4 -mr-2 text-zinc-400 hover:text-white focus:outline-none transition-colors"
           aria-label="Toggle menu"
         >
-          <div className="relative w-6 h-6">
+          <div className="relative w-6 h-6 pointer-events-none">
             <Menu
-              className={`h-6 w-6 absolute inset-0 transition-all duration-300 ${isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"}`}
+              className={`h-6 w-6 absolute inset-0 transition-all duration-300 ${isOpen ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"}`}
             />
             <X
-              className={`h-6 w-6 absolute inset-0 transition-all duration-300 ${isOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"}`}
+              className={`h-6 w-6 absolute inset-0 transition-all duration-300 ${isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-50"}`}
             />
           </div>
         </button>
@@ -104,7 +104,7 @@ export default function NavBar() {
         {/* Mobile Dropdown */}
         {/* Mobile Menu Backdrop */}
         <div
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+          className={`fixed inset-0 z-[80] bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
             isOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
@@ -114,7 +114,7 @@ export default function NavBar() {
 
         {/* Mobile Sidebar */}
         <div
-          className={`fixed top-0 right-0 h-full w-[280px] bg-black border-l border-white/5 shadow-2xl transform transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1) md:hidden flex flex-col pt-24 px-6 ${
+          className={`fixed top-0 right-0 z-[90] h-full w-[280px] bg-black border-l border-white/5 shadow-2xl transform transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1) md:hidden flex flex-col pt-24 px-6 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
