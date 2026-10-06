@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <main className="w-full max-w-[100vw] min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary overflow-x-hidden relative">
       <BackgroundParticles />
+      <NavBar />
       <div className="relative z-10 w-full overflow-hidden">
-        <NavBar />
         <HeroSection />
         <ServicesSection />
         <ProcessSection />
