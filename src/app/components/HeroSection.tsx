@@ -27,41 +27,38 @@ export default function HeroSection() {
 
         {/* Main Heading with Dual Messaging */}
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white leading-[1.1]">
-          We Build{" "}
-          <span className="text-blue-400 shimmer-text">Digital Future</span>{" "}
-          <br className="hidden md:block" />& Empower{" "}
-          <span className="shimmer-text">India</span>
+          We Build <span className="text-blue-400 shimmer-text">Digital Products</span>{" "}
+          <br className="hidden md:block" />
+          That People <span className="shimmer-text">Actually Use.</span>
         </h1>
 
         {/* Subheading */}
-        <p className="mx-auto max-w-2xl text-lg md:text-xl text-zinc-400 leading-relaxed font-light">
-          A hybrid technology studio. We craft world-class software for
-          businesses while building our own ecosystem of apps for Bharat.
-          <span className="block mt-2 text-white/80">
-            Your Vision. Our Innovation.
-          </span>
+        <p className="mx-auto max-w-2xl text-lg md:text-xl text-zinc-400 leading-relaxed font-medium mt-6">
+          <span className="text-white">Apps</span> &bull; <span className="text-white">Websites</span> &bull; <span className="text-white">SaaS</span> &bull; <span className="text-white">AI</span>
         </p>
 
         {/* CTA Buttons - Split Actions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
-          {/* Primary CTA: Services (Hire Us) */}
+          {/* Primary CTA */}
           <Link
-            href="#services"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSen44b6E8l7Z5paT4-S7-GddK4TzMvQbpYPq-3fh2o8L6y3ZQ/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
             className="glow-button group relative inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-black overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] shadow-lg"
           >
             <span className="relative z-10 flex items-center">
-              Hire Us
+              Start a Project
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
 
-          {/* Secondary CTA: Products (Our Apps) */}
+          {/* Secondary CTA */}
           <Link
-            href="#apps"
+            href="#products"
             className="group relative inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-primary/50"
           >
             <span className="relative z-10 flex items-center gap-2">
-              Explore Our Apps
+              Explore Apps
             </span>
           </Link>
         </div>
@@ -69,26 +66,18 @@ export default function HeroSection() {
         {/* Trust Indicators */}
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 pt-8 text-sm text-zinc-500 border-t border-white/5 mt-8">
           <div className="flex flex-col items-center gap-1">
-            <div className="h-8 w-auto flex items-center justify-center">
-              <img
-                src="/msme-logo.png"
-                alt="MSME Logo"
-                className="h-full w-auto object-contain brightness-0 invert opacity-80"
-              />
-            </div>
-            <span className="text-xs font-semibold tracking-wider text-zinc-400">
-              MSME Certified
-            </span>
+            <span className="text-2xl font-bold text-white">3+</span>
+            <span className="text-xs font-semibold tracking-wider text-zinc-400">Native Apps</span>
           </div>
           <div className="w-px h-8 bg-white/10 hidden md:block"></div>
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold text-white">100%</span>
-            <span>Client Satisfaction</span>
+            <span className="text-2xl font-bold text-white">100k+</span>
+            <span className="text-xs font-semibold tracking-wider text-zinc-400">Users</span>
           </div>
           <div className="w-px h-8 bg-white/10 hidden md:block"></div>
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold text-white">24/7</span>
-            <span>Support</span>
+            <span className="text-lg font-bold text-white">India &rarr; Global</span>
+            <span className="text-xs font-semibold tracking-wider text-zinc-400">Impact</span>
           </div>
         </div>
       </div>

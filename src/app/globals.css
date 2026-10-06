@@ -48,11 +48,7 @@ body {
   overflow-x: hidden;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  body, a, button, [role="button"] {
-    cursor: none;
-  }
-}
+
 
 h1,
 h2,

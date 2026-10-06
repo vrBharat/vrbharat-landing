@@ -2,30 +2,26 @@ import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
 import AppSection from "./components/AppSection";
 import ServicesSection from "./components/ServicesSection";
+import ProcessSection from "./components/ProcessSection";
+import WhySection from "./components/WhySection";
+import CtaSection from "./components/CtaSection";
 import BackgroundParticles from "./components/BackgroundParticles";
 import Footer from "./components/Footer";
 import AboutSection from "./components/AboutSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary overflow-x-hidden relative">
+    <main className="w-full max-w-[100vw] min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary overflow-x-hidden relative">
       <BackgroundParticles />
-      <div className="relative z-10">
+      <div className="relative z-10 w-full overflow-hidden">
         <NavBar />
-
-        {/* Hero Section */}
         <HeroSection />
-
-        {/* Services Section - New Hybrid Addition */}
         <ServicesSection />
-
-        {/* Apps Section */}
+        <ProcessSection />
         <AppSection />
-
-        {/* About Section */}
+        <WhySection />
         <AboutSection />
-
-        {/* Contact / Footer */}
+        <CtaSection />
         <Footer />
       </div>
     </main>

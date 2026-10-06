@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
-const navLinks = ["Services", "Apps", "About", "Contact"];
+const navLinks = ["Services", "Products", "About", "Contact"];
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,10 +76,12 @@ export default function NavBar() {
         {/* CTA Button - Desktop */}
         <div className="hidden md:block">
           <Link
-            href="#contact"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSen44b6E8l7Z5paT4-S7-GddK4TzMvQbpYPq-3fh2o8L6y3ZQ/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative px-5 py-2.5 text-sm font-semibold text-black rounded-full bg-white hover:bg-zinc-200 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-white/20"
           >
-            Hire Us
+            Start a Project
           </Link>
         </div>
 
@@ -142,7 +144,9 @@ export default function NavBar() {
 
             {/* Mobile CTA */}
             <Link
-              href="#contact"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSen44b6E8l7Z5paT4-S7-GddK4TzMvQbpYPq-3fh2o8L6y3ZQ/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={toggleMenu}
               className="mt-4 w-full flex items-center justify-center px-6 py-3 text-base font-bold text-black rounded-full bg-white hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg relative overflow-hidden group"
               style={{
@@ -151,7 +155,7 @@ export default function NavBar() {
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              <span className="relative z-10">Hire Us</span>
+              <span className="relative z-10">Start a Project</span>
               <div className="absolute inset-0 bg-gradient-to-r from-zinc-200 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </div>

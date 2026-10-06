@@ -1,11 +1,11 @@
 "use client";
 
-import { Code2, Smartphone, Palette, LineChart } from "lucide-react";
+import { Code2, Smartphone, Palette, Rocket, Sparkles } from "lucide-react";
 
 const services = [
   {
     icon: Smartphone,
-    title: "App Development",
+    title: "Mobile Apps",
     description:
       "Native iOS & Android apps built for performance and scale. We craft intuitive mobile experiences that users love.",
     gradient: "from-blue-500 to-cyan-400",
@@ -15,9 +15,17 @@ const services = [
     icon: Code2,
     title: "Web Development",
     description:
-      "Modern, responsive websites using Next.js and React. Blazing fast performance with SEO optimization built-in.",
+      "Modern, responsive websites and web apps. Blazing fast performance with top-notch security and SEO optimization.",
     gradient: "from-purple-500 to-pink-400",
     delay: "stagger-2",
+  },
+  {
+    icon: Rocket,
+    title: "SaaS / MVP",
+    description:
+      "Rapid prototyping and full-scale SaaS development to help startups launch fast and iterate quickly.",
+    gradient: "from-green-500 to-emerald-400",
+    delay: "stagger-3",
   },
   {
     icon: Palette,
@@ -25,15 +33,15 @@ const services = [
     description:
       "User-centric design that blends aesthetics with functionality. We create interfaces that are beautiful and easy to use.",
     gradient: "from-orange-500 to-yellow-400",
-    delay: "stagger-3",
+    delay: "stagger-4",
   },
   {
-    icon: LineChart,
-    title: "Digital Consulting",
+    icon: Sparkles,
+    title: "AI Integration",
     description:
-      "Strategic guidance to help you navigate the digital landscape. We help you make informed technology decisions.",
-    gradient: "from-green-500 to-emerald-400",
-    delay: "stagger-4",
+      "Leverage the power of AI to automate tasks, generate insights, and build smarter products.",
+    gradient: "from-indigo-500 to-blue-400",
+    delay: "stagger-5",
   },
 ];
 
@@ -48,19 +56,15 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-            We Build Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              Digital Future
-            </span>
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Services</span>
           </h2>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-            From concept to launch, we provide end-to-end digital solutions
-            tailored to your business needs.
+            From concept to launch, we provide end-to-end digital solutions tailored to your business needs.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -94,7 +98,9 @@ export default function ServicesSection() {
         {/* Hire Us CTA */}
         <div className="mt-16 text-center">
           <a
-            href="#contact"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSen44b6E8l7Z5paT4-S7-GddK4TzMvQbpYPq-3fh2o8L6y3ZQ/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-blue-500/20"
           >
             Start a Project

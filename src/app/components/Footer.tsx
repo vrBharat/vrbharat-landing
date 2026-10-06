@@ -114,15 +114,19 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white uppercase tracking-widest">
                 Explore
               </h4>
-              <ul className="space-y-4">
-                {["Apps Ecosystem", "About Us"].map((item, index) => (
-                  <li key={item}>
+              <ul className="grid grid-cols-2 gap-4">
+                {[
+                  { name: "Services", href: "#services" },
+                  { name: "Products", href: "#products" },
+                  { name: "About", href: "#about" },
+                ].map((item) => (
+                  <li key={item.name}>
                     <Link
-                      href={index === 0 ? "#apps" : "#about"}
+                      href={item.href}
                       className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-all duration-300"
                     >
                       <span className="h-px w-0 bg-primary group-hover:w-4 transition-all duration-300" />
-                      {item}
+                      {item.name}
                     </Link>
                   </li>
                 ))}

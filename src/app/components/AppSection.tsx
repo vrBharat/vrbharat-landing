@@ -2,7 +2,7 @@ import AppCard from "./AppCard";
 
 export default function AppSection() {
   return (
-    <section id="apps" className="relative py-20 px-6 overflow-hidden">
+    <section id="products" className="relative py-20 px-6 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
       <div className="absolute bottom-0 left-0 translate-y-1/2 w-[400px] h-[400px] bg-secondary/10 blur-[120px] rounded-full pointer-events-none animate-drift" />
@@ -55,7 +55,9 @@ export default function AppSection() {
             yours.
           </p>
           <a
-            href="#contact"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSen44b6E8l7Z5paT4-S7-GddK4TzMvQbpYPq-3fh2o8L6y3ZQ/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-2 transition-colors"
           >
             Discuss Your Project <span aria-hidden="true">&rarr;</span>

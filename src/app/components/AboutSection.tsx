@@ -79,24 +79,43 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Feature Cards Grid */}
+        {/* Feature Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className={`gradient-border shine-effect group p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-md transition-all duration-500 h-full flex flex-col justify-center min-h-[180px] hover:scale-105 cursor-pointer hover:shadow-xl ${feature.bgGlow} stagger-${index + 1}`}
-              >
-                <div className={`icon-glow mb-4 ${feature.color}`}>
-                  <feature.icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-                  {feature.description}
-                </p>
+            <div className="gradient-border shine-effect group p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-md transition-all duration-500 h-full flex flex-col justify-center min-h-[180px] hover:scale-105 cursor-pointer hover:shadow-xl group-hover:shadow-blue-500/20 stagger-1 sm:col-span-2 lg:col-span-1">
+              <div className="icon-glow mb-4 text-blue-400">
+                <Users className="h-8 w-8" />
               </div>
-            ))}
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all duration-300">
+                Who We Are
+              </h3>
+              <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
+                A passionate team of developers, designers, and strategists dedicated to crafting world-class digital experiences.
+              </p>
+            </div>
+            
+            <div className="gradient-border shine-effect group p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-md transition-all duration-500 h-full flex flex-col justify-center min-h-[180px] hover:scale-105 cursor-pointer hover:shadow-xl group-hover:shadow-purple-500/20 stagger-2">
+              <div className="icon-glow mb-4 text-purple-400">
+                <Globe className="h-8 w-8" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all duration-300">
+                What We Believe
+              </h3>
+              <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
+                Technology should be accessible, beautiful, and solve real problems without unnecessary complexity.
+              </p>
+            </div>
+
+            <div className="gradient-border shine-effect group p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-md transition-all duration-500 h-full flex flex-col justify-center min-h-[180px] hover:scale-105 cursor-pointer hover:shadow-xl group-hover:shadow-green-500/20 stagger-3">
+              <div className="icon-glow mb-4 text-green-400">
+                <Zap className="h-8 w-8" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all duration-300">
+                Our Team
+              </h3>
+              <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
+                Built by industry veterans and young innovators from India, bringing global standards to every project.
+              </p>
+            </div>
           </div>
         </div>
       </div>
