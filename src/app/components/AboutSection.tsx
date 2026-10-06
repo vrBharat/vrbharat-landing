@@ -105,15 +105,24 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="gradient-border shine-effect group p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-md transition-all duration-500 h-full flex flex-col justify-center min-h-[180px] hover:scale-105 cursor-pointer hover:shadow-xl group-hover:shadow-green-500/20 stagger-3">
+            <div className="gradient-border shine-effect group p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-md transition-all duration-500 h-full flex flex-col justify-center min-h-[180px] hover:scale-105 hover:shadow-xl group-hover:shadow-green-500/20 stagger-3">
               <div className="icon-glow mb-4 text-green-400">
                 <Zap className="h-8 w-8" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all duration-300">
-                Our Team
+                Leadership
               </h3>
               <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-                Built by industry veterans and young innovators from India, bringing global standards to every project.
+                Founded by{" "}
+                <a
+                  href="https://www.threads.net/@yash_2603__?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white font-semibold hover:text-green-400 transition-colors relative z-20 underline decoration-white/30 underline-offset-4 hover:decoration-green-400"
+                >
+                  Yash
+                </a>
+                , vrBharat brings a blend of young innovation and global standards to every digital project.
               </p>
             </div>
           </div>
