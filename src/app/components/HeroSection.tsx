@@ -71,8 +71,8 @@ export default function HeroSection() {
           </div>
           <div className="w-px h-8 bg-white/10 hidden md:block"></div>
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold text-white">100k+</span>
-            <span className="text-xs font-semibold tracking-wider text-zinc-400">Users</span>
+            <span className="text-2xl font-bold text-white">Growing</span>
+            <span className="text-xs font-semibold tracking-wider text-zinc-400">Community</span>
           </div>
           <div className="w-px h-8 bg-white/10 hidden md:block"></div>
           <div className="flex flex-col items-center gap-1">
